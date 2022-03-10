@@ -73,6 +73,7 @@ a {
   position: relative;
   z-index: 1;
   transition: 0.3s;
+  cursor:grabbing;
 }
 .mtitle::before,
 .mtitle::after {
@@ -91,21 +92,35 @@ a {
 .mtitle::after {
   right: -30px;
 }
-.mtitle.hover,
-.mtitle:hover {
-  color: white;
-  border: 2px solid white;
-  transition-delay: 0.5s;
+@media (max-width: 767px) {
+  .mtitle.hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+  }
+  .mtitle.hover::before {
+    z-index: -1;
+    animation: right 0.5s linear forwards;
+  }
+  .mtitle.hover::after {
+    z-index: -1;
+    animation: left 0.5s linear forwards;
+  }
 }
-.mtitle.hover::before,
-.mtitle:hover::before {
-  z-index: -1;
-  animation: right 0.5s linear forwards;
-}
-.mtitle.hover::after,
-.mtitle:hover::after {
-  z-index: -1;
-  animation: left 0.5s linear forwards;
+@media (min-width: 768px) {
+  .mtitle:hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+  }
+  .mtitle:hover::before {
+    z-index: -1;
+    animation: right 0.5s linear forwards;
+  }
+  .mtitle:hover::after {
+    z-index: -1;
+    animation: left 0.5s linear forwards;
+  }
 }
 .spikes {
   position: relative;
@@ -816,10 +831,6 @@ article > a:hover {
   z-index: -1;
   background-color: #e4e4e4;
 }
-.team .box.hover::after,
-.team .box:hover::after {
-  width: calc(100% - 60px);
-}
 .team .box .data {
   display: flex;
   align-items: center;
@@ -827,11 +838,6 @@ article > a:hover {
 .team .box .data img {
   width: calc(100% - 60px);
   border-radius: 10px;
-}
-.team .box.hover img,
-.team .box:hover img {
-  filter: grayscale(100%);
-  transition: 0.3s;
 }
 .team .box .data ul {
   display: flex;
@@ -854,9 +860,29 @@ article > a:hover {
   padding: 20px 0 10px;
   transition: 0.3s;
 }
-.team .box.hover .info h3,
-.team .box:hover .info h3 {
-  color: #777;
+@media (max-width: 767px) {
+  .team .box.hover::after {
+    width: calc(100% - 60px);
+  }
+  .team .box.hover img {
+    filter: grayscale(100%);
+    transition: 0.3s;
+  }
+  .team .box.hover .info h3 {
+    color: #777;
+  }
+}
+@media (min-width: 768px) {
+  .team .box:hover::after {
+    width: calc(100% - 60px);
+  }
+  .team .box:hover img {
+    filter: grayscale(100%);
+    transition: 0.3s;
+  }
+  .team .box:hover .info h3 {
+    color: #777;
+  }
 }
 /* End Team Members */
 
