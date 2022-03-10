@@ -11,16 +11,18 @@
   margin: 0;
   padding: 0;
 }
-::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--mcolor);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--mhcolor);
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--mcolor);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--mhcolor);
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -228,8 +230,8 @@ header .lscolors li:last-child {
     flex-flow: row;
   }
   header .lscolors li {
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
   }
 }
 header .container {
