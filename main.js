@@ -152,21 +152,12 @@ mtitle.forEach((t) => {
 
 /************************************************************************************* */
 
-let wb = false;
 let game = document.querySelectorAll(".team .box");
 
 game.forEach((g) => {
   g.onclick = () => {
     game.forEach((g) => {
       g.classList.remove("hover");
-      wb = false;
     });
-    if (!wb) {
       g.classList.add("hover");
-      wb = true;
-    } else {
-      g.classList.remove("hover");
-      wb = false;
-    }
-  };
-});
+}});
