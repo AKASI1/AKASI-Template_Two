@@ -152,6 +152,7 @@ mtitle.forEach((t) => {
 
 /************************************************************************************* */
 
+let wb = false;
 let game = document.querySelectorAll(".team .box");
 
 game.forEach((g) => {
@@ -159,5 +160,13 @@ game.forEach((g) => {
     game.forEach((g) => {
       g.classList.remove("hover");
     });
+    if (wb) {
+      g.classList.remove("hover");
+      wb = false;
+    } else {
       g.classList.add("hover");
-}});
+      wb = true;
+    }
+  };
+});
+
